@@ -21,7 +21,7 @@ class PageForm(forms.ModelForm):
 
     class Meta:
         model = Page
-        exclude = ('Category', )
+        exclude = ('category', )
 
     def clean(self):
         cleaned_data = self.cleaned_data
