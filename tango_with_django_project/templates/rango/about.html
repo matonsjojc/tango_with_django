@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<head>
-    <title>Django - about</title>
+{% block title_block %}
+    abuuuut
+{% endblock %}
 
-</head>
-
-<body>
-    <div>
-        Dis hez bin put hir baj {{ page_author }}. Bek tu <a href="/rango/">index.</a>
-    </div>
-
+{% block body_block %}
     <div>
         le chat:
         <br />
-        <img src="{{ MEDIA_URL }}kitler.jpg" %}"
-        alt="Picture of kitler."
+        <img src="{{ MEDIA_URL }}kitler.jpg"
+             alt="Picture of kitler.">
     </div>
-</body>
+{% endblock %}
