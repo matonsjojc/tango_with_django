@@ -34,12 +34,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'registration',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
+#registration-redux variables
+#If True, users can register
+REGISTRATION_OPEN = True
+#One-week activation window
+ACCOUNT_ACTIVATION_DAYS = 7
+# If True, the user will be automatically logged in
+REGISTRATION_AUTO_LOGIN = True
+# The page you want users to arrive at after they successfully log in
+LOGIN_REDIRECT_URL = '/rango/'
+# The page users are directed to when they are not logged in,
+# and are trying to access pages requiring AuthenticationMiddleware
+LOGIN_URL = '/accounts/login'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
