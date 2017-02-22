@@ -17,6 +17,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.auth.views import password_change
+from django.contrib.auth.views import password_change_done
 from django.conf.urls import include
 from django.conf.urls.static import static
 from rango import views
@@ -29,4 +31,8 @@ urlpatterns = [
         views.MyRegistrationView.as_view(),
         name='registration_register'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^accounts/password/change/$', password_change, {'template_name': 'registration/password_change_form.html'}, name='password_change'),
+    url(r'^accounts/password/change/done/$', password_change_done, 
+        {'template_name': 'registration/password_change_done.html'},
+        name='password_change_done'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
